@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add College</h2>
+
+<form action="/addCollege" method="post">
+    Name: <input type="text" name="name"><br>
+    Location: <input type="text" name="location"><br>
+    <button type="submit">Save</button>
+</form>
+
+<h2>College List</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="c : ${colleges}">
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.location}"></td>
+        <td>
+            <a th:href="@{'/editCollege/' + ${c.id}}">Edit</a>
+            <a th:href="@{'/deleteCollege/' + ${c.id}}">Delete</a>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

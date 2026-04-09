@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Edit College</h2>
+
+<form action="/addCollege" method="post">
+    <input type="hidden" name="id" th:value="${college.id}">
+
+    Name: <input type="text" name="name" th:value="${college.name}"><br>
+    Location: <input type="text" name="location" th:value="${college.location}"><br>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>
